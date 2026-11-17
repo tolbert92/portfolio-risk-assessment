@@ -1,0 +1,13 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://example.invalid/portfolio-risk-assessment/risk-output.schema.json","title":"Risk Assessment Output v1.0.0","type":"object","additionalProperties":false,
+ "required":["schema_version","run_id","portfolio_id","status","configuration","metrics","stress_results","classification","validation","artifacts"],
+ "properties":{
+ "schema_version":{"const":"1.0.0"},"run_id":{"type":"string"},"portfolio_id":{"type":"string"},"status":{"enum":["blocked","partial","ready"]},"configuration":{"type":"object"},
+ "metrics":{"type":"object","additionalProperties":{"type":"object","additionalProperties":false,"required":["status","unit","method","horizon"],"properties":{"status":{"enum":["verified","unavailable"]},"value":{"type":["number","null"]},"unit":{"type":"string"},"method":{"type":"string"},"horizon":{"type":"string"},"sample_size":{"type":"integer","minimum":0},"reason":{"type":"string"}}}},
+ "stress_results":{"type":"array","items":{"type":"object","required":["scenario_id","status"],"properties":{"scenario_id":{"type":"string"},"status":{"enum":["verified","unavailable"]},"impact_fraction":{"type":["number","null"]},"reason":{"type":"string"}},"additionalProperties":false}},
+ "classification":{"type":"object","required":["portfolio_risk","investor_alignment"],"properties":{"portfolio_risk":{"enum":["low","moderate","high","very_high","unclassified"]},"investor_alignment":{"enum":["aligned","potential_conflict","explicit_constraint_conflict","not_assessed"]},"benchmark_id":{"type":["string","null"]},"explanation":{"type":"string"}},"additionalProperties":false},
+ "validation":{"type":"array","items":{"type":"object","required":["code","severity","scope","message"],"properties":{"code":{"type":"string"},"severity":{"enum":["critical","warning","info"]},"scope":{"type":"string"},"message":{"type":"string"},"remediation":{"type":"string"}},"additionalProperties":false}},
+ "artifacts":{"type":"object","required":["report","json","visualization"],"properties":{"report":{"enum":["available","unavailable"]},"json":{"enum":["available","unavailable"]},"visualization":{"enum":["available","unavailable"]}},"additionalProperties":false},
+ "input_references":{"type":"array","items":{"type":"string"}},"methodology_version":{"type":"string"}
+ }
+}

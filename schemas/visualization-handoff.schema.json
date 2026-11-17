@@ -1,0 +1,5 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Risk Visualization Handoff v1.0.0 (proposed adapter)","type":"object","additionalProperties":false,
+ "required":["schema_version","run_id","portfolio_id","risk_output_status","metric_points","scenario_points","adapter_status"],
+ "properties":{"schema_version":{"const":"1.0.0"},"run_id":{"type":"string"},"portfolio_id":{"type":"string"},"risk_output_status":{"enum":["partial","ready"]},"metric_points":{"type":"array","items":{"type":"object","required":["metric","value","unit"],"properties":{"metric":{"type":"string"},"value":{"type":"number"},"unit":{"type":"string"}},"additionalProperties":false}},"scenario_points":{"type":"array","items":{"type":"object","required":["scenario_id","impact_fraction"],"properties":{"scenario_id":{"type":"string"},"impact_fraction":{"type":"number"}},"additionalProperties":false}},"adapter_status":{"enum":["unverified","compatible","incompatible"]}}
+}

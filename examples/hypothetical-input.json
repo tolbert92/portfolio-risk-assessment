@@ -1,0 +1,8 @@
+{
+ "schema_version":"1.0.0","run_id":"DEMO-001","mode":"standalone",
+ "portfolio":{"portfolio_id":"HYPOTHETICAL-2ASSET","currency":"USD","holdings":[{"asset_id":"EQUITY_A","asset_class":"equities","weight":0.6},{"asset_id":"BOND_B","asset_class":"fixed_income","weight":0.4,"duration_years":5}]},
+ "market_data":{"frequency":"monthly","return_type":"simple","returns":[{"date":"2026-01-31","asset_returns":{"EQUITY_A":0.04,"BOND_B":0.01}},{"date":"2026-02-28","asset_returns":{"EQUITY_A":-0.06,"BOND_B":0.015}},{"date":"2026-03-31","asset_returns":{"EQUITY_A":0.02,"BOND_B":-0.01}},{"date":"2026-04-30","asset_returns":{"EQUITY_A":-0.03,"BOND_B":0.005}}]},
+ "configuration":{"confidence_levels":[0.95],"annualization_factor":12,"quantile_method":"linear","override_justification":"Monthly synthetic fixture; annualization aligned to frequency"},
+ "scenarios":[{"scenario_id":"EQUITY_DOWN_20","label":"Hypothetical equity decline","shock_basis":"asset_class_return","shocks":{"equities":-0.2,"fixed_income":0}}],
+ "provenance":[{"source_type":"synthetic","source_id":"DEMO-FIXTURE","source_version":"1.0.0"}]
+}

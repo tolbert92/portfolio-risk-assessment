@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","run_id":"DEMO-001","portfolio_id":"HYPOTHETICAL-2ASSET","risk_output_status":"partial","metric_points":[{"metric":"concentration_hhi","value":0.52,"unit":"fraction"}],"scenario_points":[{"scenario_id":"EQUITY_DOWN_20","impact_fraction":-0.12}],"adapter_status":"unverified"}
